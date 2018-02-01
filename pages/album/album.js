@@ -35,6 +35,7 @@ Page({
     this.renderAlbumList();
 
     this.getAlbumList().then((resp) => {
+      console.log(resp);
       if (resp.code !== 0) {
         // 图片列表加载失败
         console.log('图片列表加载失败')
@@ -98,8 +99,7 @@ Page({
   // 获取相册列表
   getAlbumList() {
     this.showLoading('加载列表中…');
-    // setTimeout(() => this.hideLoading(), 1000);
-    return request({ method: 'GET', url: api.getUrl('/list') });
+    return request({ method: 'GET', url: api.getUrl('/getPhotoes') });
   },
 
   // 渲染相册列表

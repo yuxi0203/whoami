@@ -1,5 +1,5 @@
 module.exports = {
   /** 通讯域名 */
-  host: 'TODO',
-  basePath: '/prod',
+  host: 'http://localhost:3000',
+  basePath: '/album',
 };
