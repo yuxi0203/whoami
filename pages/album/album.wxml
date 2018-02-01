@@ -1,0 +1,19 @@
+<scroll-view class="container" >
+  <view class="album-container">
+    <view class="item-group" wx:for="{{layoutList}}" wx:for-item="group">
+        <block wx:for="{{group}}" wx:for-item="item">
+          <block wx:if="{{item}}">
+            <image bindtap="enterPreviewMode" bindlongtap="showActions" data-src="{{item}}" class="album-item" src="{{item}}" mode="aspectFill"></image>
+          </block>
+          <block wx:else>
+            <view class="album-item empty"></view>
+          </block>
+        </block>
+    </view>
+    <view bindtap="chooseImage">
+        <image src="../../images/camera.png"></image>
+        <text>上传图片</text>
+    </view>
+  </view>
+</scroll-view>
+<loading hidden="{{!showLoading}}" bindchange="hideLoading">{{loadingMessage}}</loading>
